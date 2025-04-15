@@ -81,6 +81,14 @@ ToastFuture showToast(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(radius),
       color: backgroundColor,
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withOpacity(0.3), // 更淡的阴影颜色
+          spreadRadius: 1, // 阴影扩散半径
+          blurRadius: 8, // 阴影模糊半径
+          offset: Offset(0, 4), // 阴影偏移量，增加垂直偏移
+        ),
+      ]),
     ),
     child: ClipRect(
       child: Text(
