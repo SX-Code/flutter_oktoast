@@ -56,6 +56,7 @@ ToastFuture showToast(
   TextStyle? textStyle,
   int? textMaxLines,
   TextOverflow? textOverflow,
+  BoxShadow? boxShadow,
 }) {
   if (context == null) {
     _throwIfNoContext(_contextMap.values, 'showToast');
@@ -73,6 +74,7 @@ ToastFuture showToast(
   textMaxLines ??= theme.textMaxLines;
   textOverflow ??= theme.textOverflow;
   movingOnWindowChange ??= theme.movingOnWindowChange;
+  boxShadow ??= theme.boxShadow;
 
   final Widget widget = Container(
     constraints: constraints,
@@ -81,14 +83,7 @@ ToastFuture showToast(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(radius),
       color: backgroundColor,
-      boxShadow: [
-        BoxShadow(
-          color: Color.fromRGBO(17, 12, 46, 0.15), // 更淡的阴影颜色
-          spreadRadius: 0, // 阴影扩散半径
-          blurRadius: 100, // 阴影模糊半径
-          offset: Offset(0, 48), // 阴影偏移量，增加垂直偏移
-        ),
-      ],
+      boxShadow: [boxShadow],
     ),
     child: ClipRect(
       child: Text(
