@@ -83,7 +83,7 @@ ToastFuture showToast(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(radius),
       color: backgroundColor,
-      boxShadow: [boxShadow],
+      boxShadow: boxShadow == null ? null : [boxShadow],
     ),
     child: ClipRect(
       child: Text(
