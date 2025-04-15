@@ -18,6 +18,7 @@ class OKToast extends StatefulWidget {
     this.animationDuration = _defaultAnimDuration,
     this.animationCurve,
     this.duration,
+    this.boxShadow,
   }) : backgroundColor = backgroundColor ?? _defaultBackgroundColor;
 
   /// Typically with a [WidgetsApp].
@@ -64,6 +65,9 @@ class OKToast extends StatefulWidget {
 
   /// The animation curve of show/hide toast.
   final Curve? animationCurve;
+  
+  // The toast boxShadow
+  final BoxShadow? boxShadow;
 
   @override
   State<OKToast> createState() => _OKToastState();
@@ -126,6 +130,7 @@ class _OKToastState extends State<OKToast> {
       animationDuration: widget.animationDuration,
       animationCurve: widget.animationCurve ?? Curves.easeIn,
       duration: widget.duration ?? _defaultDuration,
+      boxShadow: widget.boxShadow,
       child: w,
     );
   }
