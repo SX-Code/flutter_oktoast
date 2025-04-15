@@ -20,6 +20,7 @@ class ToastTheme extends InheritedWidget {
     this.textAlign,
     this.textMaxLines,
     this.textOverflow,
+    this.boxShadow,
   });
 
   static ToastTheme of(BuildContext context) =>
@@ -41,6 +42,7 @@ class ToastTheme extends InheritedWidget {
   final EdgeInsets? textPadding;
   final int? textMaxLines;
   final TextOverflow? textOverflow;
+  final BoxShadow? boxShadow;
 
   @override
   bool updateShouldNotify(ToastTheme oldWidget) => true;
